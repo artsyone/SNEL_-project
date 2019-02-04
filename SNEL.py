@@ -4,7 +4,6 @@ import math
 die_rolls = [1,2,3,4,5,6]
 outcomes = [11,9,7,8,14,11]
 
-
 #observed =
 
 def count_rolls():
@@ -30,9 +29,12 @@ def expected_count(rolls,count):
 
 
 def chi_square(expected):
-    V = 0 +2.2
-    for i in die_rolls:
-        V = ((i - expected)**2) /expected
+    V = 0 
+    for i in outcomes:
+        V = (i - expected) ** 2 / (expected)
+
+        
+        
 
     print (V)
 
