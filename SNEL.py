@@ -1,81 +1,82 @@
 import random
 import math
-
-die_rolls = [1,2,3,4,5,6]
-outcomes = [11,9,7,8,14,11]
+import string
 
 
-def count_rolls():
-    rolls = 0 
-    for die in die_rolls:
-        rolls += 1
-    return rolls 
 
-def sum_of_all():
-    count = 0 
-    for o in outcomes:
-        count += o
+def pratice_random():
+    num_chars = 18000
+    result = ""
+    for i in range(num_chars):
+        n = random.randrange(32,127)
+        result += chr(n)
+    return(result)
 
-    return count
 
-def expected_count(rolls,count):
-
-    expected = (count/rolls)
+def get_char_counts(result):
+    counts = [0] * 127
     
-    return expected
-
-def get_char_count():
-    count = [0] * 127
-    return counts[32:]
-
-
-def chi_square(expected):
-   print(sum([(i - expected) ** 2 / expected for i in outcomes]))
-   
+    for c in result:
+        n = ord(c)
+        counts[n] += 1
+        
     
-def random_file_writer():
+    counts = counts[32:]
+    print(counts)
+
+
+def random_file_writer(num_chars):
     file_num = "0"
 
     for n in range(num_files):
         files =  open("file" + str(file_num) + '.txt', 'w' )
 
-        files.write(str(random.randrange(32,127)))
-        
         file_num += str(1)
 
-#def get_file_content(file_name):
-        ''' helps with coops files'''
-    #with open(file_name,'r') as f :
-        #content = f.read()
-    #return content
-
-#lets do this
-num_files = 2
-threshold = 50
-
-#for n in range(num_files):
-    #if chi square > threshold:
-
-        #print(files,chi_square)
-
-
-    
-
-    
-
-
-
-
-
-
-
-
-
+        for i in range(1):
+            files.write(num_chars)
+        
         
 
-count_rolls()
-sum_of_all()
-expected_count(count_rolls(), sum_of_all())
-chi_square(expected_count(count_rolls(), sum_of_all()))
-random_file_writer()
+def chi_square(i):
+    expected = i/126
+    
+    for n in num_files :
+        pass
+        
+''' you got it to at least add all the letters for each letter 
+
+
+#lets do this
+num_files = 1
+threshold = 50
+
+'''for n in range(num_files):
+    file_name = get_file_name(n)
+    text = get_file_content("files/"+ file_name)
+    counts = get_char_counts(text)
+    chi_square = chi_square(counts)
+
+
+    if chi_square > threshold:
+        print(file_name,chi_square)'''
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+pratice_random()
+
+get_char_counts(pratice_random())
+
+#chi_square()
+random_file_writer(pratice_random())
 
