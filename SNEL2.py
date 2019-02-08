@@ -38,14 +38,16 @@ def random_file_writer(num_chars):
         
         
 
-def chi_square(counts):
-     
-    expected = 18000/126
+def chi_square(vals):
+    x = 0
     
+    expected = sum(vals)/ len(vals)
+    for observed in vals:
+        x += (observed - expected) ** 2 / (expected)
+    return x 
+
     
-    for u in  num_files:
-        pass
-        print(sum([(n - expected) ** 2 / expected]))
+   
 
 ''' you got it to at least add all the letters for each letter''' 
 
@@ -77,9 +79,9 @@ threshold = 50
 
 
 practice_random()
-
+vals = [8,2]
 get_char_counts(practice_random())
 
-#chi_square(get_char_counts(practice_random()))
+print(chi_square(vals))
 random_file_writer(practice_random())
 
