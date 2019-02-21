@@ -78,36 +78,29 @@ def chi_square(counts):
 
     print(expected)
     
-def file_read():
-    for n in range(18000): 
-         file = open("file" + str(get_hex(n)) + '.txt', 'r')
-         print(x)
+def sub_cipher():
 
+    file = open("file0.txt", 'r')
+    contents = file.read()
+    a = ''
+    for char in contents:
+           
+            old_char = ord(char) - 32
+            new_char = 126 - old_char
 
-    
+           
+            a += (chr(new_char))
 
-#write get hex function
+            print(a) 
 
-  
-''' you got it to at least add all the letters for each letter''' 
+            
+                  
+   
+ 
 
 
 #lets do this
-'''
-num_files = 1
-threshold = 50
 
-
-for n in range(num_files):
-    file_name = get_file_name(n)
-    text = get_file_content("files/"+ file_name)
-    counts = get_char_counts(text)
-    chi_square = chi_square(counts)
-
-
-    if chi_square > threshold:
-        print(file_name,chi_square)
-'''
 
 print( get_file_name(0) ) # file_0000.txt
 print( get_file_name(9) ) # file_0009.txt
@@ -116,10 +109,11 @@ print( get_file_name(2342) )
 print( get_file_name(17999) )
 print( get_file_content(0)   )
 print( get_char_counts(practice_random())  )
+print(sub_cipher())
 
 #fix chi_square!!!
 equal = 0
-for i in range(18000):
+for i in range(1):
     
     with open("text_files/file_" + hex(i)[2:].upper().zfill(4) + ".txt", "r") as file:
         file_r = file.read()
