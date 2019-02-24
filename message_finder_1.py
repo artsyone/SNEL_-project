@@ -92,7 +92,7 @@ def sub_cipher():
 
 
     return a
-def sub_cipher_2():
+def sub_cipher_5():
     
     file = open("file4.txt", 'r')
     contents = file.read()
@@ -101,48 +101,15 @@ def sub_cipher_2():
   
     new_char = ''
     for char in contents:
-        a = str(ord(char))
-        loc = key.find(a,0,94)
+        a = char
+        loc = key.find(a)
 
 
         
-        new_char += chr(loc + 32)
+        new_char += chr(loc + 33)
 
     return new_char
     
-                
-def sub_cipher_1():
-    
-    file = open("file4.txt", 'r')
-    contents = file.read()
-
-    key =("`1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"'"'"ZXCVBNM<>?")
-    print(len(key))
-    print(key)
-    count = 0 
-    new_char = ''
-    b = ''
-    
-    for char in contents:
-        a = str(ord(char))
-        b += str(key.find(a))
-
-        
-        
-
-
-        
-        #new_char += chr(loc + 32)
-        count += 1
-
-
-    print(b)
-
-    print(len(new_char))
-    print(count)
-
-    #return new_char
-                
 def first_char():
     
     for i in range(18000):
@@ -165,6 +132,7 @@ def vig_cipher():
             old_char = ord(char) - 32
             new_char = 126 - old_char
 
+
 #lets do this
 
 
@@ -175,9 +143,12 @@ print( get_file_name(2342) )
 print( get_file_name(17999) )
 print( get_file_content(0)   )
 print( get_char_counts(practice_random())  )
-print(sub_cipher_2())
+print(sub_cipher_5())
 
-#fix chi_square!!!
+
+
+
+
 equal = 0
 for i in range(1):
     
