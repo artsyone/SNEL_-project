@@ -80,24 +80,6 @@ def first_char():
 
         print(url,end= '')
         
-def vig_cipher():
-
-    key = ("abcdefghijklmnopqrstuvwxyz")
- 
-    file = open("file1.txt", 'r')
-    contents = file.read()
-    new_char = ''
-    for char in contents:
-
-        if char == ('z'):
-            new_char += chr(97)
-
-        else:
-            old_char = ord(char) + 1
-            new_char += chr(old_char)
-
-            
-    return new_char
    
 #lets do this
 
@@ -109,7 +91,7 @@ print( get_file_name(2342) )
 print( get_file_name(17999) )
 print( get_file_content(0)   )
 print( get_char_counts(practice_random())  )
-print(vig_cipher())
+
 
 equal = 0
 for i in range(1):
