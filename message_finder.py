@@ -26,7 +26,6 @@ def get_file_name(num):
     return "file_" + num_str.upper().zfill(4) + ".txt"
 
 
-
 def get_file_content(num):
     # open file_name, read it, return the contents
 
@@ -34,17 +33,11 @@ def get_file_content(num):
     num_str = hex(num)
     num_str = num_str[2:]
     
-    
-    
         
     file_names = open('text_files/file_' + num_str.upper().zfill(4) + '.txt', 'r')
          
-        
-        
-
     return(file_names)
    
-
 
 def get_char_counts(result):
 
@@ -57,8 +50,6 @@ def get_char_counts(result):
 
     return final_counts 
      
-   
-
    
 def chi_square(counts):
 
@@ -82,16 +73,34 @@ def sub_cipher():
     contents = file.read()
     a = ''
     for char in contents:
-           
+            
+         
             old_char = ord(char) - 32
             new_char = 126 - old_char
 
            
             a += (chr(new_char))
 
-            print(a) 
 
-            
+    return a
+def sub_cipher_5():
+    
+    file = open("file4.txt", 'r')
+    contents = file.read()
+
+    key =("`1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"'"'"ZXCVBNM<>?")
+  
+    new_char = ''
+    for char in contents:
+        a = char
+        loc = key.find(a)
+
+
+        
+        new_char += chr(loc + 33)
+
+    return new_char
+    
 def first_char():
     
     for i in range(18000):
@@ -104,15 +113,47 @@ def first_char():
 
         print(url,end= '')
         
-def vig_cipher():       
+def vig_cipher():
+
+    key = ("abcdefghijklmnopqrstuvwxyz")
  
-    file = open("file4.txt", 'r')
+    file = open("file1.txt", 'r')
     contents = file.read()
-    a = ''
+    new_char = ''
     for char in contents:
-           
-            old_char = ord(char) - 32
-            new_char = 126 - old_char
+
+        if char == ('z'):
+            new_char += chr(97)
+
+        else:
+            old_char = ord(char) + 1
+            new_char += chr(old_char)
+
+            
+    return new_char
+
+def caesar_cipher():
+
+    file = open("file6.txt", 'r')
+    contents = file.read()
+    new_char = ''
+    for char in contents:
+
+        
+
+        if ord(char) <= 52:
+            old_char = ord(char) + 74
+            new_char += chr(old_char)
+
+        else:
+            old_char = ord(char) - 21 
+            new_char += chr(old_char)
+
+            
+    return new_char
+
+    print(contents)
+   
 
 #lets do this
 
@@ -124,11 +165,15 @@ print( get_file_name(2342) )
 print( get_file_name(17999) )
 print( get_file_content(0)   )
 print( get_char_counts(practice_random())  )
+#print(sub_cipher_5())
+print(vig_cipher())
+print(caesar_cipher())
 
 
-#fix chi_square!!!
+
+
 equal = 0
-for i in range(18000):
+for i in range(1):
     
     with open("text_files/file_" + hex(i)[2:].upper().zfill(4) + ".txt", "r") as file:
         file_r = file.read()
