@@ -67,39 +67,6 @@ def chi_square(counts):
 
     print(expected)
     
-def sub_cipher():
-
-    file = open("file0.txt", 'r')
-    contents = file.read()
-    a = ''
-    for char in contents:
-            
-         
-            old_char = ord(char) - 32
-            new_char = 126 - old_char
-
-           
-            a += (chr(new_char))
-
-
-    return a
-def sub_cipher_5():
-    
-    file = open("file4.txt", 'r')
-    contents = file.read()
-
-    key =("`1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"'"'"ZXCVBNM<>?")
-  
-    new_char = ''
-    for char in contents:
-        a = char
-        loc = key.find(a)
-
-
-        
-        new_char += chr(loc + 33)
-
-    return new_char
     
 def first_char():
     
@@ -131,30 +98,7 @@ def vig_cipher():
 
             
     return new_char
-
-def caesar_cipher():
-
-    file = open("file6.txt", 'r')
-    contents = file.read()
-    new_char = ''
-    for char in contents:
-
-        
-
-        if ord(char) <= 52:
-            old_char = ord(char) + 74
-            new_char += chr(old_char)
-
-        else:
-            old_char = ord(char) - 21 
-            new_char += chr(old_char)
-
-            
-    return new_char
-
-    print(contents)
    
-
 #lets do this
 
 
@@ -165,12 +109,7 @@ print( get_file_name(2342) )
 print( get_file_name(17999) )
 print( get_file_content(0)   )
 print( get_char_counts(practice_random())  )
-#print(sub_cipher_5())
 print(vig_cipher())
-print(caesar_cipher())
-
-
-
 
 equal = 0
 for i in range(1):
