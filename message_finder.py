@@ -27,9 +27,7 @@ def get_file_name(num):
 
 
 def get_file_content(num):
-    # open file_name, read it, return the contents
 
-    
     num_str = hex(num)
     num_str = num_str[2:]
     
@@ -80,9 +78,7 @@ def first_char():
 
         print(url,end= '')
         
-   
 #lets do this
-
 
 print( get_file_name(0) ) # file_0000.txt
 print( get_file_name(9) ) # file_0009.txt
@@ -91,10 +87,10 @@ print( get_file_name(2342) )
 print( get_file_name(17999) )
 print( get_file_content(0)   )
 print( get_char_counts(practice_random())  )
-
+print( first_char()  )
 
 equal = 0
-for i in range(1):
+for i in range(18000):
     
     with open("text_files/file_" + hex(i)[2:].upper().zfill(4) + ".txt", "r") as file:
         file_r = file.read()
@@ -113,20 +109,3 @@ for i in range(1):
         equal += 1 
 
         print(equal)
-
-
-
-
-   
-   
-
-   
-      
-
-
-  
-
-
-
-
-

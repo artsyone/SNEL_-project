@@ -14,7 +14,9 @@ def sub_cipher():
 
 
     return answer
+
 def sub_cipher_5():
+    #message 5 
     
     file = open("file4.txt", 'r')
     contents = file.read()
