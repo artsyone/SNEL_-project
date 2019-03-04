@@ -9,13 +9,13 @@ def vig_cipher():
         num = key_word[item]
         new_char = ord(char) - ord(num)
         
-        if new_char < 32:
-            new_char + 95 
+        while new_char < 32:
+            new_char += 95 
 
         answer += chr(new_char)
 
         item += 1 
-        if item > 6:
+        if item == 6:
             item = 0             
         
     return answer 
